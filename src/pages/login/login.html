@@ -1,0 +1,128 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Login</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+			<!--button class="login-button" ion-button icon-left block clear color="danger" (click)="loginWithGoogle()">
+				<ion-icon name="logo-google"></ion-icon>
+				Log in with Google
+			</button-->
+
+	<!--form (ngSubmit)="login()" [formGroup]="loginForm">
+		<ion-list inset>
+
+			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
+				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="email" #emailErrors="ngxErrors">
+				<div [ngxError]="['email', 'required']" [when]="['touched', 'dirty']">It should be a valid email</div>
+			</div>
+
+			<ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+				<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="password" #passwordErrors="ngxErrors">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 5 characters</div>
+			</div>
+		</ion-list>
+
+		<div padding-horizontal>
+			<div class="form-error">{{loginError}}</div>
+
+			<button ion-button full type="submit" [disabled]="!loginForm.valid">Log in</button>
+			<div class="login-footer">
+				<p>
+					<a href="#">Forgot password?</a>
+					If you're a new user, please sign up.
+					 <button ion-button icon-left block clear (click)="signup()">
+							<ion-icon name="person-add"></ion-icon>
+							Sign up
+						</button>
+				</p>
+			</div>
+
+		</div>
+	</form-->
+	<div class="login-content">
+	  
+			<!-- Logo -->
+			<div padding text-center>
+			  <div class="logo"></div>
+			  <h2 ion-text class="text-primary">
+				<strong>Login</strong>
+			  </h2>
+			</div>
+		
+			<!-- Login form -->
+			<form (ngSubmit)="login()" [formGroup]="loginForm">
+				<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
+					<ion-label floating>
+						<ion-icon name="mail" item-start class="text-primary"></ion-icon>
+						Email
+					</ion-label>
+					<ion-input type="email" formControlName="email"></ion-input>
+				</ion-item>
+	
+				<div ngxErrors="email" #emailErrors="ngxErrors">
+					<div [ngxError]="['email', 'required']" [when]="['touched', 'dirty']">It should be a valid email</div>
+				</div>
+
+				<ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+					<ion-label floating>
+						<ion-icon name="lock" item-start class="text-primary"></ion-icon>
+						Password
+					</ion-label>
+					<ion-input type="password" formControlName="password"></ion-input>
+				</ion-item>
+	
+				<div ngxErrors="password" #passwordErrors="ngxErrors">
+					<div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 5 characters</div>
+				</div>
+			  <!--ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
+				  <ion-label floating>
+					  <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+					  Email
+				  </ion-label>
+				  <ion-input type="email" formControlName="email"></ion-input>
+			  </ion-item>
+		  
+			  <div ngxErrors="email" #emailErrors="ngxErrors">
+				  <div [ngxError]="['email', 'required']" [when]="['touched']">It should be a valid email</div>
+			  </div-->
+  
+			  <!--ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+				  <ion-label floating>
+					  <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+					  Password
+				  </ion-label>
+				  <ion-input type="password" formControlName="password"></ion-input>
+			  </ion-item>
+	  
+			  <div ngxErrors="password" #passwordErrors="ngxErrors">
+				  <div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 6 characters</div>
+			  </div-->
+				<div margin-top>
+					<div class="form-error">{{loginError}}</div>
+					<button ion-button block type="submit" color="dark" [disabled]="!loginForm.valid">Log in</button>
+				</div>
+			</form>
+			New user? please sign up...
+					 <button ion-button icon-left block clear (click)="signup()">
+							<ion-icon name="person-add"></ion-icon>
+							Sign up
+						</button>
+			<!-- Other links -->
+			<!--div text-center margin-top>
+			  <span ion-text color="primary" tappable (click)="login()">I have an account</span>
+			</div-->
+		
+		  </div>
+	
+</ion-content>

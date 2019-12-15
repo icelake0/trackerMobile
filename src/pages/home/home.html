@@ -1,14 +1,29 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-row>
+    <ion-col text-start padding-top>
+      <ion-title>Tracker Map</ion-title>
+    </ion-col>
+    <ion-col text-end>
+      <button ion-button color="dark" (click)="loadMap()" round outline >
+        <ion-icon start name="locate"></ion-icon>
+        Where I Am
+      </button>
+    </ion-col>
+  </ion-row>
 </ion-header>
+<ion-content>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div class="map-wrapper">
+    <div id="map_center">
+      <img src="../../assets/icon/center_marker.png" />
+    </div>
+    <div #map id="map"></div>
+  </div>
+  <div id="address">
+    <span>{{address}}</span>
+		<ion-input type="text" placeholder="Access Code" [(ngModel)]="access_code" name="access_code"  (keyup)="updateAccessCode()"></ion-input>
+    <button ion-button round color="dark" (click)="logout()" *ngIf="auth.authenticated"><ion-icon name="log-out" item-left></ion-icon> Log out</button>
+  </div>
+
+
 </ion-content>
